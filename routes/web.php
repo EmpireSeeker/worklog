@@ -38,4 +38,7 @@ Route::get("/quote",[QuoteController::class,'create'])->name('create');
 Route::post("/quote",[QuoteController::class,'store'])->name('quote.store');
 
 Route::get("/shipment/{tracking_number}", [ShipmentsController::class, 'track'])->name('track');
-Route::get()
+Route::get("/orderlist",[UserController::class,'order'])->name('order');
+Route::delete('/users/{user}', [RegisterController::class, 'deleteUser'])->name('admin.deleteUser');
+Route::get('/users/{user}/edit', [RegisterController::class, 'editUser'])->name('admin.editUser');
+Route::put('/users/{user}', [RegisterController::class, 'updateUser'])->name('admin.updateUser');

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Quote;
+
 
 class UserController extends Controller
 {
@@ -16,9 +18,13 @@ class UserController extends Controller
 
 
 
+
+
     public function admindash(){
         $users = User::all();
-        return view('/admindash', ['users' => $users]);
+        $user = auth()->user()->name;
+        $orders = Quote::all();
+        return view('/admindash', ['users' => $users, 'orders'=>$orders]);
     }
     public function userdash(){
         return view ('/userdash');
@@ -45,6 +51,18 @@ class UserController extends Controller
       else {
         return back()->withError(['password' => 'invalid credential']);
       }
+
+    }
+
+
+
+    public function order (){
+        $user = auth()->user()->name;
+        //dd($user);
+        $quote = new Quote;
+        $orders = $quote->where('name', $user)->get();
+        //dd($orders);
+        return view('order', ['orders' => $orders]);
 
     }
 }

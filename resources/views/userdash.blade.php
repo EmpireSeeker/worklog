@@ -2,11 +2,18 @@
 <html lang="en">
 <head>
 
+<link rel="icon" href="/assets/img/p1.png">
+
     <link rel="stylesheet" href="{{asset('assets/css/eff.css')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     @if(session('success'))
@@ -23,9 +30,9 @@
            <h2> <a class="navbar-brand" href="#!">DEV LOGISTICS</a></h2>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Service</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="{{ route('order') }}">See Quote</a></li>
 
 
 
@@ -49,7 +56,7 @@
 
 
 <!-- Features section-->
-<section class="py-5" id="features">
+<section id="about class="py-5" >
     <div class="container px-5 my-5">
         <div class="row gx-5">
             <div class="col-lg-4 mb-5 mb-lg-0">
@@ -86,8 +93,7 @@
     </div>
 </section>
 <!-- Pricing section-->
-<section class="bg-light py-5 border-bottom">
-    <div class="container px-5 my-5">
+    <div class="container px-5 my-5" id="service">
         <div class="text-center mb-5">
             <h1 class="fw-bolder">Choose The Best Plan</h1>
             <p class="lead mb-0">Pick your plan. Change whenever you want.
@@ -254,7 +260,7 @@
     </div>
 </section>
 <!-- Contact section-->
-<section class="pr">
+<section class="pr" id="contact">
     <div class="container px-5 my-5 px-5">
         <div class="text-center mb-5">
             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>

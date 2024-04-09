@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <link rel="icon" href="/assets/img/p1.png">
     <link rel="stylesheet" href="{{asset('assets/css/login.css')}}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -21,10 +21,10 @@
         <h3>Dev Logistics Login </h3>
 
         <label for="email">Email</label>
-        <input type="text" placeholder="Email " id="email" name="email">
+        <input type="text" placeholder="Email " id="email" name="email" required>
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password" name="password">
+        <input type="password" placeholder="Password" id="password" name="password" required>
         <br>
         <a href="{{route('register')}}">Register</a>
 

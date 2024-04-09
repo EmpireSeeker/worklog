@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <link rel="icon" href="/assets/img/p1.png">
     <link rel="stylesheet" href="{{asset('assets/css/css/styles.css')}}">
     <link
     rel="stylesheet"
@@ -81,7 +81,15 @@
                             <td><i class="positiveIcon fas fa-check"></i> {{ $user->name }}</td>
                             <td>{{ $user->email }}
 
+                                <div>
+                                    <p>{{ $user->name }}</p>
+                                    <form action="{{ route('admin.deleteUser', $user) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+                                    </form>
                             </td>
+
 
                         @endforeach
 
@@ -128,7 +136,7 @@
             </div>
             <div class="card card4">
               <div class="card1_title_wrapper">
-                <h1 class="car1_title">Todo List</h1>
+                <h1 class="car1_title">Quote List</h1>
                 <p class="car1_text">
                   29 Todos
                   <span class="card1_span"
@@ -141,42 +149,42 @@
                   <thead class="card1_table_head">
                     <tr>
                       <th>Person</th>
-                      <th>Title</th>
-                      <th>Urgent</th>
-                      <th>Status</th>
+                      <th>destination</th>
+                      <th>phone</th>
+                      <th>goods_name</th>
+                      <th>color</th>
+                      <th>quantity</th>
                     </tr>
                   </thead>
-                  <tbody class="card1_table_tbody">
-                    <tr>
-                      <td><i class="positiveIcon fas fa-check"></i> John Doe</td>
-                      <td>Operation Manager</td>
-                      <td>Yes</td>
-                      <td>
-                        <button class="btn btn-secondary">Completed</button>
+                  @foreach ($orders as $order)
+
+                  <tr>
+                      <td><i class="positiveIcon fas fa-check"></i> {{ $order->name }}</td>
+                      <td>{{ $order->destination }}
+                        <td>{{ $order->phone }}
+                            <td>{{ $order->goods_name }}
+                                <td>{{ $order->color }}
+                                    <td>{{ $order->quantity }}
+
+
+
+
+
+
                       </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i class="negativeIcon fas fa-times"></i> Gonzales Higuan
-                      </td>
-                      <td>IT Stuff</td>
-                      <td>No</td>
-                      <td>
-                        <button class="btn btn-primary">Processing</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <i class="positiveIcon fas fa-check"></i> Turgut Ozben
-                      </td>
-                      <td>Architecture</td>
-                      <td>Yes</td>
-                      <td>
-                        <button class="btn btn-secondary">Completed</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+
+                      <form action="{{ route('admin.deleteUser', $user) }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" onclick="return confirm('Are you sure you want to delete this user?')">Delete</button>
+                      </form>
+
+                    </div>
+
+
+                  @endforeach
+
+
               </div>
             </div>
           </div>

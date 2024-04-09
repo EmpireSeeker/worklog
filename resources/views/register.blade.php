@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="/assets/img/p1.png">
     <link rel="stylesheet" href="{{asset('assets/css/reg.css')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +28,7 @@
 		</div>
 
 		<div class="colorlibcopy-agile">
-			<p>© DevCleon Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Cleon</a></p>
+			<p>© DevCleon Signup Form. All rights reserved | Design by <a href="#0" target="_blank">Cleon</a></p>
 		</div>
 
 		<ul class="colorlib-bubbles">

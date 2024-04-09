@@ -15,6 +15,12 @@ class Quote extends Model
         'destination',
         'phone',
         'goods_name',
+        'color',
+        'quantity',
     ];
+
+    public function user(){
+        $this->hasOne(User::class, 'user_id');
+    }
 
 }

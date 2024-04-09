@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('quotes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable();
             $table->string('name');
             $table->string('destination');
             $table->string('phone')->unique();
             $table->string('goods_name');
+            $table->string('color')->unique();
+            $table->string('quantity')->unique();
             $table->timestamps();
         });
     }

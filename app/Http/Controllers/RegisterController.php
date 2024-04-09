@@ -33,7 +33,16 @@ class RegisterController extends Controller
 
     }
 
-    
+
+
+    public function deleteUser(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('admindash')->with('success', 'User deleted successfully');
+    }
+
+
 
 }
 

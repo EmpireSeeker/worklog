@@ -23,6 +23,8 @@ class QuoteController extends Controller
             'destination'=>'required',
             'phone'=>'required',
             'goods_name'=>'required',
+            'color'=>'required',
+            'quantity'=>'required',
         ]);
 
         $quote=new Quote();
@@ -30,6 +32,8 @@ class QuoteController extends Controller
         $quote->destination=$request->input('destination');
         $quote->phone=$request->input('phone');
          $quote->goods_name=$request->input('goods_name');
+         $quote->color=$request->input('color');
+         $quote->quantity=$request->input('quantity');
          $quote->save();
 
          return redirect()->route('user')->with('success', 'Quote created successfully!');
