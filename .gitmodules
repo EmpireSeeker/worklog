@@ -1,0 +1,3 @@
+[submodule "DevLogistics"]
+    path = DevLogistics
+    url = https://github.com/username/DevLogistics.git
